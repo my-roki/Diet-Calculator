@@ -1,0 +1,25 @@
+/* To work around the problem of the gap */
+li a { display: inline-block; }
+
+li a { display: block; }
+
+#navigation ul { margin: 0; }
+
+/* Just how utterly moronic is it that I have to use an image to 
+   show the bullet just because the list is floated?! */
+#navigation li 
+{ 
+	margin-right: 0;
+	margin-left: 15px; 
+	padding: 10px 15px;
+	background: url(images/bullet_for_ie.png) center left no-repeat; 
+} 
+
+#navigation li a { display: inline; }
+
+/* To show the highlight (we changed styles of li a above, so IE 
+won't show the highlight anymore). */
+
+#friends a { background-color: #fcfcfc; }
+
+#friends a:hover, #friends a:active { background-color: #ffffff; }

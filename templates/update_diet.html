@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>insert_diet</title>
+</head>
+
+<body>
+
+    <div>
+      <h3>트래킹 수정</h3>
+      <form action="/update_perform" method="POST">
+          <label for="date">수정할 날짜</label>
+          <input type="text" class="form-control" placeholder="YYYY-MM-DD" name="date">
+          <br>
+          <label for="weight">수정할 체중</label>
+          <input type="text" class="form-control" placeholder="체중을 입력하세요" name="weight">kg
+          <br>
+          <button type="submit" class="btn btn-primary mt-3"> 수정하기 </button>
+      </form>
+    </div>
+
+  </body>
+
+</html>

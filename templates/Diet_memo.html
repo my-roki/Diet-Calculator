@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <style>
+    .button {
+      background-color: white;
+      color: #6699ff;
+      border: 2px solid #ffffff;
+      font-size: 12.5px
+    }
+  </style>
+  <title>Be Honest, Be Humble</title>
+  <meta http-equiv="content-language" content="en-us" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" media="print" href="{{ url_for('static', filename='print.css') }}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='master.css') }}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='ie-win.css') }}" />
+  <!--[if lt ie 8]><link rel="stylesheet" type="text/css" media="screen" href="ie-win.css" /><![endif]-->
+</head>
+
+<body>
+
+  <div id="header">
+    <h1><span>다이어트 계산기 ver1.0</span></h1>
+  </div>
+  <div id="navigation">
+    <ul>
+      <li><a href="http://localhost:5000/Diet_profile">내 정보</a></li>
+      <li><a href="http://localhost:5000/Diet_calc">다이어트 계산기</a></li>
+      <li class="active"><a href="http://localhost:5000/Diet_foodcalc">식단 계산기</a></li>
+      <li><a href="http://localhost:5000/Diet_memo">다이어트 변화기록</a></li>
+    </ul>
+  </div>
+
+  <div id="wrapper">
+    <div id="content" style= "width: 700px;">
+      <div class="post">
+        <h2 class="post-title">다이어트 변화기록</h2>
+
+        <div style="padding-left: 50px;">
+          <p><a href="/insert">체중 입력하기</a></p>
+          <p><a href="/update">체중 수정하기</a></p>
+          <p><a href="/delete">체중 삭제하기</a></p>
+          <form action="/select" method="POST">
+            <p> <button type="submit" class="button" formaction="/select"><b>체중 조회하기</b></button></p>
+          </form>
+        </div>
+      </div>
+
+      <div>
+        <div style= "width: 700px;">
+          <h3>도움말</h3>
+          <dl>
+            <dt> 몸무게는 매일 재는것을 원칙으로 합니다. 매일 <b>일정한 시간</b>에 체중을 측정하시길 바랍니다. </dt>
+            <dd> 트래킹은 매일 하는것이 아닌 <b>1주일 단위</b>로 진행하는 것이 더 정확합니다. 일주일간의 몸무게의 평균을 구하세요! </dd>
+            <dd> 체중은 1주일에 <b>0.3~0.5kg 변화</b>하는 것이 가장 건강하고이상적인 속도입니다.</dd>
+            <dd> 체중이 변화하는 속도가 늦다면 식사량을 줄이거나 활동량을 늘려보세요. 반대로 속도가 빠르다면 식사량을 여유롭게 가져가거나 치팅데이를 가져주는것도 좋은 방법입니다.</dd>
+          </dl>
+
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

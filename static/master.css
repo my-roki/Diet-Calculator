@@ -1,0 +1,263 @@
+* { margin: 0; padding: 0; }
+
+html
+{
+	color: #333333;
+	background-color: #ffffff;
+	font: normal 76%/1.7 "Lucida Grande", "Trebuchet MS", Verdana, Sans-Serif;
+}
+
+/* Links */
+
+a { text-decoration: none; font-weight: bold; border-bottom: 1px dotted #aaaaaa; }
+
+a:link { color: #2255aa; }
+
+a:visited { color: #6699ee; }
+
+a:hover, a:active { color: #aa3322; border-bottom-style: solid; }
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 { color: #551111; padding: 10px 0 0; }
+
+h1 { font-size: 2.0em; }
+
+h2 { font-size: 1.8em; }
+
+h3 { font-size: 1.6em; }
+
+h4, h5 { font-size: 1.4em; }
+
+h6 { font-size: 1.0em; font-weight: bold; text-transform: uppercase; }
+
+/* Lists */
+
+ul
+{
+	margin: 10px 35px; 
+	line-height: 2.0em;
+	list-style-type: square;
+}
+
+ol
+{
+	margin: 10px 40px;
+	line-height: 2.0em;
+}
+
+dl
+{
+	margin: 10px 35px; 
+	line-height: 1.7em;
+}
+
+dt, dd { padding: 5px 0; }
+
+/* Images */
+
+img 
+{ 
+	padding: 8px; 
+	background-color: #fcfcfc;
+	border: 1px solid #cfcfcf; 
+}
+
+img:hover { background-color: #f9f9f9; }
+
+/* Other Html Elements */
+
+p
+{
+	margin: 15px 0; 
+	line-height: 1.7em;
+}
+
+abbr, acronym, cite, kbd
+{
+	cursor: help; 
+	font-style: normal;
+	border-bottom: 1px dotted #888888; 
+}
+
+pre { overflow: auto; }
+
+blockquote, pre
+{
+	margin: 20px 35px; 
+	padding: 5px 10px; 
+	background-color: #f9f9f9;
+	border: 1px solid #cfcfcf; 
+}
+
+code { font-family: Consolas, Monaco; }
+
+hr
+{
+	height: 1px;
+	clear: both;
+	visibility: hidden;
+}
+
+/* Structure */
+
+body
+{
+	width: 750px;
+	margin: 0 auto;
+}
+
+#header
+{
+	/* Unhighlight the following two lines if you want a header image. */
+	/* 
+	height: 150px;
+	background: #000000 url(images/header1.png) bottom right no-repeat;
+	*/
+}
+
+#navigation
+{
+	float: left;
+	width: 100%;
+	clear: both;
+	background-color: #f9f9f9;
+}
+
+#wrapper
+{
+	float: left; 
+	width: 100%;
+	clear: both;
+}
+
+#sidebar
+{
+	width: 40%;
+	float: left;
+	padding: 10px 0;
+	overflow: hidden;
+}
+
+#footer
+{
+	clear: both;
+	border-top: 1px dotted #cccccc;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+/* Header */
+
+#header h1 
+{ 
+	margin-bottom: 10px; 
+	
+	/* Unhighlight the following line when using a header image */
+	/* margin-left: 25px; */
+}
+
+/* Navigation */
+
+#navigation ul { float: left; }
+
+#navigation li { float: left; margin-right: 35px; }
+
+/* Content */
+
+.post
+{
+	padding: 0 20px; 
+}
+
+.post-footer 
+{
+	font-size: .9em;
+	padding: 5px 8px;
+	margin-bottom: 20px;
+	background-color: #fcfcfc;
+	border: 1px solid #cfcfcf;
+}
+
+/* Sidebar */
+
+#sidenotes, #syndicate
+{
+	padding: 0 20px; 
+}
+
+#sidenotes h3 { padding-bottom: 5px; }
+
+#sidenotes dl { margin: 0; padding: 0; }
+
+#sidenotes dt { padding-bottom: 0; }
+
+#sidenotes dd { padding: 2px 0 10px; }
+
+#syndicate h3 { padding-bottom: 0; }
+
+#syndicate ul { margin-top: 5px; }
+
+/* Footer */
+
+#extras
+{
+	float: left;
+	width: 100%;
+	clear: both;
+	background-color: #fcfcfc;
+}
+
+#friends, #links, #about
+{
+	float: left;
+	padding: 10px; 
+}
+
+#friends
+{
+	width: 25%;
+}
+
+#links
+{
+	width: 40%;
+}
+
+#about
+{
+	width: 25%;
+}
+
+#friends ul
+{
+	margin: 0;
+	padding: 5px 0;
+	list-style-type: none;
+}
+
+#friends a
+{
+	display: block;
+	margin-top: -1px;
+	padding: 5px 8px;
+	border-top: 1px dotted #aaaaaa;
+}
+
+#friends a:hover, #friends a:active
+{
+	background-color: #ffffff;
+	border-bottom-style: dotted;
+}
+
+#links dl
+{
+	margin: 0; 
+	padding: 5px 0; 
+}
+
+#copyright 
+{
+	margin: 0;
+	padding: 5px 8px;
+	background-color: #eeeeee;
+}

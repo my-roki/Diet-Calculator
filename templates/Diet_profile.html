@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>  
+  <title>Be Honest, Be Humble</title>
+  <meta http-equiv="content-language" content="en-us" />
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" media="print" href="{{ url_for('static', filename='print.css') }}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='master.css') }}" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='ie-win.css') }}" />
+  <!--[if lt ie 8]><link rel="stylesheet" type="text/css" media="screen" href="ie-win.css" /><![endif]-->
+
+  <script type="text/javascript">
+    function checkEmpty() {
+      var frm = document.metaForm;
+
+      if (frm.age.value == "") {
+        alert("나이를 입력해 주세요.");
+        frm.age.focus();
+        return false;
+      }
+      if (frm.height.value == "") {
+        alert("신장을 입력해 주세요.");
+        frm.height.focus();
+        return false;
+      }
+      if (frm.weight.value == "") {
+        alert("체중을 입력해 주세요.");
+        frm.weight.focus();
+        return false;
+      }
+      if (frm.fat_rate.value == "") {
+        alert("체지방률을 입력해 주세요.");
+        frm.fat_rate.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+
+</head>
+
+<body>
+
+  <div id="header">
+    <h1><span>다이어트 계산기 ver1.0</span></h1>
+  </div>
+
+  <div id="navigation">
+    <ul>
+      <li><a href="http://localhost:5000/Diet_profile">내 정보</a></li>
+      <li><a href="http://localhost:5000/Diet_calc">다이어트 계산기</a></li>
+      <li class="active"><a href="http://localhost:5000/Diet_foodcalc">식단 계산기</a></li>
+      <li><a href="http://localhost:5000/Diet_memo">다이어트 변화기록</a></li>
+    </ul>
+  </div>
+
+  <section id="wrapper">
+
+    <div id="content" style = "width=300px;">
+      <div class="post">
+        <h2 class="post-title">내 정보</h2>
+        <form id="metaForm1" name="metaForm1" action="http://localhost:5000/basal_metabolism" method="post" onsubmit="return checkEmpty();">
+          <div class="input_your_profile" id="profile">
+            <br>
+            <label for="gender"><b> 성별: </b></label>
+            <input type="radio" id="male" name="gender" value="m" style='margin-left: 24px;' checked> 남자 </input>
+            <input type="radio" id="female" name="gender" value="f"> 여자 </input>
+            <br>
+            <label for="age"><b> 나이: </b></label>
+            <input type="text" name="age" id="age" value="" placeholder="만 나이를 입력하세요." style='margin-left: 24px;'> 세
+            <br>
+            <label for="height"><b> 신장: </b></label>
+            <input type="text" name="height" id="height" value="" placeholder="현재 키를 입력하세요." style='margin-left: 24px;'> cm
+            <br>
+            <label for="weight"><b> 체중: </b></label>
+            <input type="text" name="weight" id="weight1" value="" placeholder="현재 몸무게를 입력하세요." style='margin-left: 24px;'> kg
+            <br>
+            <label for="fat_rate"><b> 체지방률: </b></label>
+            <input type="text" name="fat_rate" id="fat_rate" value="" placeholder="모르면 빈칸으로 남기세요."> %
+            <br>
+            <input type="submit" value="기초대사량 확인하기" style='margin-top: 5px;'>
+          </div>
+        </form>
+
+        <br>
+
+        <form id="metaForm2" name="metaForm2" action="http://localhost:5000/active_metabolism" method="post">
+          <div>
+            <select name="action" size="4" style="width: 222px;">
+              <option name="active" value="c">빈둥빈둥</option>
+              <option name="active" value="s">앉아서 일하는 업무</option>
+              <option name="active" value="w">돌아다니는 업무</option>
+              <option name="active" value="a">활동적인 업무</option>
+            </select>
+            <br>
+            <label for="weight"><b> 체중: </b></label>
+            <input type="text" name="weight" id="weight2" value="" placeholder="현재 몸무게를 입력하세요." style='margin-left: 19px;'> kg
+            <br>
+            <input type="submit" value="활동대사량 확인하기" style='margin-top: 5px;'>
+          </div>
+        </form>
+
+        <div class="result_your_profile">
+          <blockquote>
+            <p>당신의 기초대사량은 {{i}}입니다.</p>
+            <p>당신의 활동대사량은 {{j}}입니다.</p>
+          </blockquote>
+        </div>
+      </div>
+      </div>
+      <aside id="sidebar">
+        <div id="sidenotes">
+  
+          <h3>도움말</h3>
+          <dl>
+            <dt> 결과값은 <b>추정치</b>입니다. </dt>
+            <dd> 오로지 참고용으로 사용하고 트래킹을 꼭 실천하세요! </dd>
+            <dt> 자신의 체지방률을 <b>모르면 빈칸</b>으로 남기시면 됩니다. </dt>
+            <dd> 단, 체지방을 입력하면 좀 더 정확한 값을 얻을 수 있습니다. </dd>
+          
+            <dt><b> 기초대사량 </b></dt>
+            <dd> 생명 활동을 유지해 나가는데 필요한 에너지 소모량. 이 에너지는 신체의 필수적인 활동을 위해 사용됩니다. </dd>
+            <dt><b> 활동대사량 </b></dt>
+            <dd> 몸을 움직일 때 에너지를 소모하는 양. 근육이 많아 운동능력이 좋은 사람은 많은 운동을 통해 활동대사량을 높일 수 있기 때문에 다이어트에 유리합니다. </dd>          
+          </dl>
+              </div>
+        </aside>
+  
+    </section>
+        
+
+</body>
+
+</html>
